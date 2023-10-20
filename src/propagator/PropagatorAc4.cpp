@@ -40,7 +40,7 @@ PropagatorAc4::PropagatorAc4(
 	}
 }
 
-void addToQueue(int x, int y, int z, int label, std::deque<vector<int>>& updateQueue) {
+void addToQueue(int x, int y, int z, int label, std::deque<vector<int> >& updateQueue) {
 	vector<int> labeledPos(4);
 	labeledPos[0] = x;
 	labeledPos[1] = y;
@@ -50,14 +50,14 @@ void addToQueue(int x, int y, int z, int label, std::deque<vector<int>>& updateQ
 }
 
 // Propagate everything in the update queue.
-void PropagatorAc4::propagate(deque<vector<int>>& updateQueue) {
+void PropagatorAc4::propagate(deque<vector<int> >& updateQueue) {
 	while (updateQueue.size() > 0) {
 		vector<int> update = updateQueue.front();
 		int xC = update[0];
 		int yC = update[1];
 		int zC = update[2];
 
-		vector<vector<int>> cSupporting = settings->supporting[update[3]];
+		vector<vector<int> > cSupporting = settings->supporting[update[3]];
 		for (int dir = 0; dir < numDirections; dir++) {
 			int xB = xC;
 			int yB = yC;
@@ -107,7 +107,7 @@ void PropagatorAc4::propagate(deque<vector<int>>& updateQueue) {
 
 // Set a label in the block at the given position.
 bool PropagatorAc4::setBlockLabel(int label, int position[3]) {
-	std::deque<vector<int>> updateQueue;
+	std::deque<vector<int> > updateQueue;
 	int x = position[0];
 	int y = position[1];
 	int z = position[2];
@@ -137,7 +137,7 @@ bool PropagatorAc4::removeLabel(int label, int position[3]) {
 	labeledPos[1] = y;
 	labeledPos[2] = z;
 	labeledPos[3] = label;
-	std::deque<vector<int>> updateQueue;
+	std::deque<vector<int> > updateQueue;
 	updateQueue.push_back(labeledPos);
 	propagate(updateQueue);
 	return true;

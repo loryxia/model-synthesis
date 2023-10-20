@@ -20,7 +20,7 @@ class PropagatorAc4 : public Propagator {
 		int numDirections;
 
 		// Propagate the existing labels.
-		void propagate(std::deque<vector<int>>& updateQueue);
+		void propagate(std::deque<vector<int> >& updateQueue);
 
 	public:
 		PropagatorAc4(InputSettings* newSettings, int* newPossibilitySize, int* newOffset);

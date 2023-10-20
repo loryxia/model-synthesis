@@ -40,16 +40,16 @@ struct InputSettings {
 	bool*** transition;
 
 	// Which labels does each label support in each direction.
-	vector<vector<vector<int>>> supporting;
+	vector<vector<vector<int> > > supporting;
 
 	// The amount that each label is supported in each direction.
-	vector<vector<int>> supportCount;
+	vector<vector<int> > supportCount;
 
 	// The ending of the file for the tiled model.
 	string tiledModelSuffix = "";
 
 	// The image bitmaps.
-	vector<vector<unsigned char>> tileImages;
+	vector<vector<unsigned char> > tileImages;
 
 	// The width and height in pixels.
 	int tileWidth = 0;

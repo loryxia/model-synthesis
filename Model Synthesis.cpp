@@ -3,7 +3,7 @@
 #include "src/third_party/xmlParser.h"
 #include "src/parseInput/parseInput.h"
 #include "src/OutputGenerator.h"
-#include "src/Synthesizer.h"
+#include "src/synthesizer.h"
 #include <chrono>
 #include <vector>
 #include <map>
@@ -16,7 +16,7 @@ int main() {
     int numSamples = xMainNode.nChildNode();
     int numIterations = 2;
 
-    microseconds inputTime{0}, synthesisTime{0}, outputTime{0};
+    std::chrono::microseconds inputTime, synthesisTime, outputTime;
     for (int i = 0; i < numSamples; i++) {
         InputSettings* settings = parseInput(xMainNode.getChildNode(i), inputTime);
         Synthesizer synthesizer(settings, synthesisTime);

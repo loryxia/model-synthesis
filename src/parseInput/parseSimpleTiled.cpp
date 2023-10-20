@@ -156,7 +156,7 @@ void getTile(string path, int versionNum, InputSettings& settings) {
 void parseSimpleTiled(InputSettings& settings) {
 	// Read in the data.xml file.
 	string path = "samples/" + settings.name + "/data.xml";
-	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t> > converter;
 	std::wstring wPath = converter.from_bytes(path);
 	XMLNode xDataNode = XMLNode::openFileHelper(wPath.c_str(), L"set");
 	XMLNode xTilesNode = xDataNode.getChildNode(L"tiles");

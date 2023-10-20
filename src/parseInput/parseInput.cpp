@@ -26,7 +26,7 @@ void computeSupport(InputSettings& settings) {
 	bool*** transition = settings.transition;
 	for (int c = 0; c < N; c++) {
 		int numDirections = 2 * settings.numDims;
-		std::vector<std::vector<int>> supportingC(numDirections);
+		std::vector<std::vector<int> > supportingC(numDirections);
 		std::vector<int> supportCountC(numDirections);
 		for (int dir = 0; dir < numDirections; dir++) {
 			std::vector<int> supportingDir;

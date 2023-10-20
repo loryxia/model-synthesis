@@ -270,7 +270,7 @@ void Synthesizer::addGround(int blockStart[3]) {
 // can only be on the boundary of the model.
 void Synthesizer::removeNoSupport(int blockStart[3]) {
 	int numDirections = 2 * settings->numDims;
-	std::deque<vector<int>> updateQueue;
+	std::deque<vector<int> > updateQueue;
 	for (int i = 0; i < numLabels; i++) {
 		for (int dir = 0; dir < numDirections; dir++) {
 			if (settings->supportCount[i][dir] == 0) {
